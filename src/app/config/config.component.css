@@ -1,0 +1,24 @@
+.slider--bx {
+  width: 70%;
+  margin: auto;
+  margin-bottom: 2vh;
+  text-align: center;
+}
+
+.slider--tt {
+  width: 70%;
+  margin: auto;
+  margin-bottom: 2vh;
+
+}
+
+.slider {
+  margin-top: -3vh;
+  width: 80%;
+}
+
+.save--btn{
+    display: block;
+    margin:auto;
+    width: 30vw;
+}

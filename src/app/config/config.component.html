@@ -1,1 +1,6 @@
-<mat-slider></mat-slider>
+<mat-card class="slider--tt">Defina seu nível de interesse nos temas:</mat-card>
+<mat-card class="slider--bx" *ngFor="let tema of likesList">
+  <p>{{tema.nome}}</p>
+  <mat-slider class="slider" thumbLabel min="1" max="100" [(ngModel)]="tema.score"></mat-slider>
+</mat-card>
+<button mat-button color="primary" (click)="salvar()" class="save--btn">Salvar</button>

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -35,6 +36,7 @@ import { BackendService } from './services/backend.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatSidenavModule,
     MatToolbarModule,
     MatTabsModule,
