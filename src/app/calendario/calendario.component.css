@@ -1,0 +1,120 @@
+.calendar--bx {
+  height: 20vw;
+  width: 98vw;
+  margin: auto;
+}
+
+.btn--gp {
+    height: 8vh;
+  width: 100%;
+  margin: auto;
+  display: flex;
+}
+
+.btn--al {
+  margin: auto;
+  display: inline;
+
+}
+
+.month--tt{
+    font-size: 3vh;
+    text-transform: capitalize;
+    margin: 0 3vw 0 3vw;
+
+}
+
+.btn--primary {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: 0;
+  border: 2px solid rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  margin: 0;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+  overflow: visible;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: inherit;
+  background: 0 0;
+}
+
+.btn--primary:hover {
+    border: 2px solid #259CFF;
+  color: rgba(0, 0, 0, .87);
+}
+
+.day--modal--bg{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 100vh;
+  width: 100vw;
+  margin: auto;
+  background: #d1d1d157;
+}
+
+.day--modal{
+  background: white;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  height: 60vh;
+  width: 60vw;
+  margin: auto;
+  margin-top: 15vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.day--modal--hd{
+  height: 15%;
+  padding: 1vh 0 0 1vw;
+  display: flex;
+}
+
+.day--modal--bd{
+  height: 85%;
+  padding: 0 1vw 0 1vw;
+
+}
+
+p{
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+
+}
+.day--modal--title{
+  font-size: 3vh;
+}
+
+.day--modal--info{
+  font-size: 2vh;
+}
+
+.close--btn{
+  position: fixed;
+  right: 21.5vw;
+}
+
+.acc--bx{
+  width: 85%;
+  margin: auto;
+  margin-bottom: 3vh;
+}

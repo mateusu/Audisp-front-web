@@ -12,6 +12,10 @@ export class BackendService {
         return this.http.get(this.url + 'aud/lista', {});
     }
 
+    getListaAudiencasPorData(body) {
+        return this.http.post(this.url + 'aud/data', body);
+    }
+
     getAudienciasSugeridas(user) {
         return this.http.post(this.url + 'aud/sugeridas', { id: user });
     }
