@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendService } from '../services/backend.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  audiencias: any[];
+  constructor(private backend: BackendService) {
+    const user = localStorage.getItem('user');
+    backend.getAudienciasSugeridas(user).subscribe(
+      (data: any) => {
+        this.audiencias = data;
+      }
+    );
+  }
 
   ngOnInit() {
   }

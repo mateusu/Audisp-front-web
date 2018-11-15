@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class BackendService {
 
-    url: string = "http://localhost:6005/"
+    url = 'http://localhost:6005/';
     constructor(private http: HttpClient) {
     }
 
@@ -13,7 +13,7 @@ export class BackendService {
     }
 
     getAudienciasSugeridas(user) {
-        return this.http.post(this.url + 'aud/sugeridas', {id: user});
+        return this.http.post(this.url + 'aud/sugeridas', { id: user });
     }
 
     getUserLikes(body) {

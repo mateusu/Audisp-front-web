@@ -1,4 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -8,17 +11,18 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSliderModule } from '@angular/material/slider';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
+import { AppComponent } from './main/app.component';
 import { ConfigComponent } from './config/config.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { HomeComponent } from './home/home.component';
 import { ListaAudComponent } from './lista-aud/lista-aud.component';
 import { LoginComponent } from './login/login.component';
 
-import { BackendService } from './services/backend.service'
+import { BackendService } from './services/backend.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +41,12 @@ import { BackendService } from './services/backend.service'
     MatListModule,
     MatCardModule,
     MatExpansionModule,
-    MatSliderModule
+    MatSliderModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    HttpClientModule,
+    HttpModule,
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]

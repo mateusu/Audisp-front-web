@@ -1,3 +1,36 @@
-<p>
-  login works!
-</p>
+<div class="login--bg">
+  <div class="login--bx">
+    <img *ngIf="!register" class="logo" src='../../assets/logo.png'>
+    <div *ngIf="!register" class="login--forms">
+      <mat-form-field class="input--bx">
+        <input type="email" matInput placeholder="Email" #mail>
+      </mat-form-field>
+      <mat-form-field class="input--bx">
+        <input type="password" matInput placeholder="Senha" #pass>
+      </mat-form-field>
+      <button (click)="login(mail.value, pass.value)" class="bx--btns" color="primary" mat-button>Entrar</button>
+      <button (click)="closeModal()" class="bx--btns" color="warn" mat-button>Cancelar</button>
+      <button (click)="register=true" class="bx--btns" color="link" mat-button>Registrar</button>
+    </div>
+
+    <div *ngIf="register" class="register--forms">
+      <mat-form-field class="input--bx">
+        <input type="text" matInput placeholder="Nome" #name>
+      </mat-form-field>
+      <mat-form-field class="input--bx">
+        <input type="email" matInput placeholder="Email" #mail>
+      </mat-form-field>
+      <mat-form-field class="input--bx">
+        <input type="password" matInput placeholder="Senha" #pass>
+      </mat-form-field>
+
+      <mat-form-field class="input--bx">
+        <input type="date" matInput placeholder="Nascimento" #date>
+      </mat-form-field>
+      <button (click)="registrar(mail.value, pass.value, date.value, name.value)" class="bx--btns" color="primary"
+        mat-button>Registrar</button>
+      <button (click)="register=false" class="bx--btns" color="warn" mat-button>Cancelar</button>
+    </div>
+
+  </div>
+</div>

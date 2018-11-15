@@ -1,5 +1,14 @@
-.aud--card{
-    width: 85%;
-    height: auto;
-    margin: auto;
+.aud--card {
+  width: 85%;
+  height: auto;
+  margin: auto;
+  margin-bottom: 2vh;
+}
+
+.like--btn {
+  border: 0
+}
+
+.like--btn:hover {
+  fill:#259CFF
 }

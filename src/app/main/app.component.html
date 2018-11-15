@@ -1,10 +1,10 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav class="menu" #sidenav mode="side" [(opened)]="opened">
-      <mat-nav-list role="list">
-          <mat-list-item (click)="selectedTab=3" role="listitem">Configurações</mat-list-item>
-          <mat-list-item role="listitem">Entrar</mat-list-item>
-          <mat-list-item role="listitem">Sair</mat-list-item>
-        </mat-nav-list>
+    <mat-nav-list role="list">
+      <mat-list-item (click)="selectedTab=3" role="listitem">Configurações</mat-list-item>
+      <mat-list-item *ngIf="!userLogged" (click)="showLogin=true; sidenav.toggle();" role="listitem">Entrar</mat-list-item>
+      <mat-list-item *ngIf="userLogged" (click)="logout()" role="listitem">Sair</mat-list-item>
+    </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
@@ -19,19 +19,23 @@
         </div>
       </mat-toolbar-row>
     </mat-toolbar>
+
     <div class="content">
       <app-home *ngIf="selectedTab==0"></app-home>
       <app-lista-aud *ngIf="selectedTab==1"></app-lista-aud>
       <app-calendario *ngIf="selectedTab==2"></app-calendario>
       <app-config *ngIf="selectedTab==3"></app-config>
-
     </div>
+
+    <app-login (close)="closeModal($event)" *ngIf="showLogin"></app-login>
+
+
     <mat-toolbar class="footer--tb" color="secondary">
-        <mat-tab-group (selectedTabChange)="changeTab($event)" class="menu--tabs">
-            <mat-tab label="Início"></mat-tab>
-            <mat-tab label="Lista"></mat-tab>
-            <mat-tab label="Calendário"></mat-tab>
-          </mat-tab-group>
+      <mat-tab-group (selectedTabChange)="changeTab($event)" class="menu--tabs">
+        <mat-tab label="Início"></mat-tab>
+        <mat-tab label="Lista"></mat-tab>
+        <mat-tab label="Calendário"></mat-tab>
+      </mat-tab-group>
     </mat-toolbar>
   </mat-sidenav-content>
 </mat-sidenav-container>

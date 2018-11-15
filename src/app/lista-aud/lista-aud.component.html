@@ -1,13 +1,19 @@
 <mat-accordion>
-  <mat-expansion-panel class="acc--bx">
+  <mat-expansion-panel *ngFor="let aud of audiencias" class="acc--bx">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        Aaaa
+        Audiência Pública
       </mat-panel-title>
       <mat-panel-description>
-        BBBB
-       </mat-panel-description>
-    </mat-expansion-panel-header>
+        <svg style="margin-right: 2px" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+          <path d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z" />
+          <path fill="none" d="M0 0h24v24H0z" /></svg>
+          {{aud.local}} - {{aud.data}} {{aud.horario}}
+      </mat-panel-description>
 
+    </mat-expansion-panel-header>
+    <p>Pautas: </p>
+    <p><span *ngFor="let pauta of aud.pauta; let i = index">{{pauta.nome}}<span *ngIf="i!=aud.pauta.length -1">, </span>
+      </span></p>
   </mat-expansion-panel>
 </mat-accordion>
