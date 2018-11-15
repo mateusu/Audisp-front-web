@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Audisp-front-web';
+  title = 'Audisp';
+  selectedTab: number;
+
+  constructor() {
+    this.selectedTab = 0;
+   }
+  ngOnInit() {
+
+  }
+
+  changeTab(event){
+    this.selectedTab = event.index;
+  }
 }
