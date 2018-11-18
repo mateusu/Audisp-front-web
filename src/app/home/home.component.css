@@ -6,7 +6,15 @@
 }
 
 .like--btn {
-  border: 0
+  border: 0;
+  background: #fff;
+}
+
+.like--btn--clk{
+  border: 0;
+  fill:#259CFF;
+  background: #fff;
+
 }
 
 .like--btn:hover {

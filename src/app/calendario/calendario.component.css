@@ -5,7 +5,7 @@
 }
 
 .btn--gp {
-    height: 8vh;
+  height: 8vh;
   width: 100%;
   margin: auto;
   display: flex;
@@ -17,10 +17,10 @@
 
 }
 
-.month--tt{
-    font-size: 3vh;
-    text-transform: capitalize;
-    margin: 0 3vw 0 3vw;
+.month--tt {
+  font-size: 3vh;
+  text-transform: capitalize;
+  margin: 0 3vw 0 3vw;
 
 }
 
@@ -54,11 +54,11 @@
 }
 
 .btn--primary:hover {
-    border: 2px solid #259CFF;
+  border: 2px solid #259CFF;
   color: rgba(0, 0, 0, .87);
 }
 
-.day--modal--bg{
+.day--modal--bg {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -71,11 +71,12 @@
   background: #d1d1d157;
 }
 
-.day--modal{
+.day--modal {
   background: white;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   height: 60vh;
   width: 60vw;
+  min-width: 350px;
   margin: auto;
   margin-top: 15vh;
   top: 0;
@@ -84,37 +85,63 @@
   right: 0;
 }
 
-.day--modal--hd{
-  height: 15%;
-  padding: 1vh 0 0 1vw;
-  display: flex;
+.day--modal--hd {
+  height: 9vh;
+  padding: 1vh 1vw 0 1vw;
+  display: inline;
 }
 
-.day--modal--bd{
-  height: 85%;
+.day--modal--bd {
+  height: 45vh;
   padding: 0 1vw 0 1vw;
+  overflow-y: scroll;
+}
+
+p {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 
 }
 
-p{
-  font-family: Roboto,"Helvetica Neue",sans-serif;
-
-}
-.day--modal--title{
-  font-size: 3vh;
+.day--modal--title {
+  font-size: 2.5vh;
+  margin-left: 1vw;
 }
 
-.day--modal--info{
+.day--modal--info {
   font-size: 2vh;
 }
 
-.close--btn{
-  position: fixed;
-  right: 21.5vw;
+.close--btn {
+  float: right;
+  margin-top: -8vh;
+  margin-right: 2vw;
+  position: sticky;
+
 }
 
-.acc--bx{
+.acc--bx {
   width: 85%;
   margin: auto;
   margin-bottom: 3vh;
+}
+
+.txt{
+  font-size: 1.6vh !important;
+}
+
+.like--btn{
+ border: 0;
+ margin-left: -1vw;
+ background: #fff;
+}
+
+.like--btn--clk{
+  border: 0;
+  margin-left: -1vw;
+  fill:#259CFF;
+  background: #fff;
+}
+
+.like--btn :hover{
+  fill:#259CFF;
 }

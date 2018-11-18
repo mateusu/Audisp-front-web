@@ -35,13 +35,13 @@ export class ConfigComponent implements OnInit {
   }
 
   salvar() {
-    const body = { userId: 0, pautas: [] };
+    const body = { userId: 0, temas: [] };
     body.userId = this.userId;
     this.likesList.map(
-      (pauta) => {
-        body.pautas.push({
-          id: pauta.id,
-          score: pauta.score
+      (tema) => {
+        body.temas.push({
+          id: tema.id,
+          score: tema.score
         });
       }
     );

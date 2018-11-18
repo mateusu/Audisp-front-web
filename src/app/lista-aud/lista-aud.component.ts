@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BackendService } from '../services/backend.service';
 
 @Component({
@@ -9,14 +9,32 @@ import { BackendService } from '../services/backend.service';
 export class ListaAudComponent implements OnInit {
 
   audiencias: any[];
+  @Input() perDate: boolean;
+  @Input() audData: any[];
+
   constructor(private backend: BackendService) {
-    backend.getListaAudiencas().subscribe((data: any) => {
-      this.audiencias = data;
-      console.log(data);
-    });
+
   }
 
   ngOnInit() {
+    console.log(this.audData);
+
+    if (!this.perDate) {
+      this.backend.getListaAudiencas().subscribe((data: any) => {
+        this.audiencias = data;
+      });
+    } else {
+      this.audiencias = this.audData;
+    }
+  }
+
+  likeAudiencia(temas) {
+    const userId = localStorage.getItem('user');
+    this.backend.likeAudiencia({ userId: userId, temas: temas }).subscribe(
+      (data) => {
+        console.log(data);
+      }
+    );
   }
 
 }

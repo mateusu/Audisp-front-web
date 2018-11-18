@@ -1,0 +1,29 @@
+<div class="modal--bg">
+  <div class="modal--bd">
+    <div class="edit--forms">
+        <mat-card-title class="title">Ajude-nos corrigindo os dados da Audiência Pública</mat-card-title>
+      <mat-form-field class="input--bx">
+        <input type="text" matInput placeholder="Comissão" [(ngModel)]="aud.comissao">
+      </mat-form-field>
+      <mat-form-field class="input--bx">
+        <input type="text" matInput placeholder="Local" [(ngModel)]="aud.local">
+      </mat-form-field>
+      <mat-form-field class="input--bx">
+        <input type="text" matInput placeholder="Pautas" [(ngModel)]="aud.pauta">
+      </mat-form-field>
+      <mat-form-field class="input--bx">
+          <input type="text" matInput placeholder="Temas" [(ngModel)]="temasText">
+        </mat-form-field>
+
+      <mat-form-field class="input--bx">
+        <input type="date" matInput placeholder="Data" [(ngModel)]="aud.data">
+      </mat-form-field>
+      <mat-form-field class="input--bx">
+        <input type="text" matInput placeholder="Horário" [(ngModel)]="aud.horario">
+      </mat-form-field>
+      <button class="bx--btns" color="primary"
+        mat-button>Salvar</button>
+      <button (click)="closeModal()" class="bx--btns" color="warn" mat-button>Cancelar</button>
+    </div>
+  </div>
+</div>

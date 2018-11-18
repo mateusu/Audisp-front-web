@@ -12,7 +12,7 @@ export class CalendarioComponent implements OnInit {
 
   view = 'month';
   showDayModal: boolean;
-  audiencias: any[];
+  audData: any[];
   viewDate: Date = new Date();
   dia: any;
   events: CalendarEvent[] = [
@@ -24,10 +24,11 @@ export class CalendarioComponent implements OnInit {
     backend.getListaAudiencas().subscribe(
       (lista: any) => {
         lista.map((aud) => {
+
           this.events.push({
             title: aud.nome + ' ' + aud.pauta,
             color: { primary: '#ad2121', secondary: '#FAE3E3' },
-            start: new Date(aud.data)
+            start: new Date(aud.data + 'T12:00:00')
           });
         });
       }
@@ -39,12 +40,13 @@ export class CalendarioComponent implements OnInit {
 
   showModal() {
     const d = new Date(this.clickedDate);
-    this.backend.getListaAudiencasPorData({data: formatDate(d, 'yyyy-MM-dd', 'en-US')}).subscribe(
+    this.backend.getListaAudiencasPorData({ data: formatDate(d, 'yyyy-MM-dd', 'en-US') }).subscribe(
       (lista: any) => {
         this.dia = formatDate(d, 'dd/MM/yyyy', 'pt-br');
         this.showDayModal = true;
-        this.audiencias = lista;
+        this.audData = lista;
       }
     );
   }
+
 }

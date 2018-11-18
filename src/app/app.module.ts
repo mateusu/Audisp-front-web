@@ -30,6 +30,7 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 import { BackendService } from './services/backend.service';
+import { AudEditorComponent } from './aud-editor/aud-editor.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -40,7 +41,8 @@ registerLocaleData(localePt, 'pt-BR');
     CalendarioComponent,
     HomeComponent,
     ListaAudComponent,
-    LoginComponent
+    LoginComponent,
+    AudEditorComponent
   ],
   imports: [
     BrowserModule,

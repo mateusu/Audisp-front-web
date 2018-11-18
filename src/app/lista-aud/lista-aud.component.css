@@ -1,5 +1,31 @@
-.acc--bx{
-    width: 85%;
-    margin: auto;
-    margin-bottom: 3vh;
+.acc--bx {
+  min-width: 300px;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 3vh;
+}
+
+.txt {
+  font-size: (12px+1.6vh) !important;
+}
+
+.like--btn {
+  border: 0;
+  background: #fff;
+}
+
+.aux--btns {
+  border: 0;
+  background: #fff;
+  float: right;
+}
+
+.like--btn--clk {
+  border: 0;
+  fill: #259CFF;
+  background: #fff;
+}
+
+.like--btn :hover {
+  fill: #259CFF;
 }

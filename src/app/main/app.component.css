@@ -8,6 +8,7 @@
 
 .menu {
   width: 30vh;
+  min-width: 160px;
 }
 
 .menu--btn {

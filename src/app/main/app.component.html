@@ -22,7 +22,7 @@
 
     <div class="content">
       <app-home *ngIf="selectedTab==0"></app-home>
-      <app-lista-aud *ngIf="selectedTab==1"></app-lista-aud>
+      <app-lista-aud [perDate]="false" *ngIf="selectedTab==1"></app-lista-aud>
       <app-calendario *ngIf="selectedTab==2"></app-calendario>
       <app-config *ngIf="selectedTab==3"></app-config>
     </div>
