@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { BackendService } from '../services/backend.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-aud-editor',
@@ -11,7 +13,7 @@ export class AudEditorComponent implements OnInit {
   @Output() close = new EventEmitter();
   temasText: any = '';
 
-  constructor() { }
+  constructor(private backend: BackendService, public snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.aud.temas.map(
@@ -19,8 +21,22 @@ export class AudEditorComponent implements OnInit {
         this.temasText += tema.nome + ', ';
       }
     );
+    this.temasText = this.temasText.substring(0, this.temasText.length - 2);
   }
 
+  save() {
+    this.aud.temas = this.temasText.split(', ');
+    this.backend.editAudiencia(this.aud).subscribe(
+      (res) => {
+        console.log(res);
+        this.snackBar.open('Salvo com sucesso', 'Fechar', {
+          duration: 2000,
+        });
+
+        this.closeModal();
+      }
+    );
+  }
   closeModal() {
     this.close.emit(false);
   }

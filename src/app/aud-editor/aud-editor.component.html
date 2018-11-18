@@ -21,7 +21,7 @@
       <mat-form-field class="input--bx">
         <input type="text" matInput placeholder="Horário" [(ngModel)]="aud.horario">
       </mat-form-field>
-      <button class="bx--btns" color="primary"
+      <button (click)="save()" class="bx--btns" color="primary"
         mat-button>Salvar</button>
       <button (click)="closeModal()" class="bx--btns" color="warn" mat-button>Cancelar</button>
     </div>

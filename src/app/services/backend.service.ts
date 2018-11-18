@@ -16,6 +16,10 @@ export class BackendService {
         return this.http.post(this.url + 'aud/data', body);
     }
 
+    editAudiencia(body) {
+        return this.http.put(this.url + 'aud/update', body);
+    }
+
     getAudienciasSugeridas(user) {
         return this.http.post(this.url + 'aud/sugeridas', { id: user });
     }
