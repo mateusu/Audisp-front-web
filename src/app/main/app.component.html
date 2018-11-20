@@ -20,11 +20,11 @@
       </mat-toolbar-row>
     </mat-toolbar>
 
-    <div class="content">
+    <div (click)="sidenav.close()" class="content">
       <app-home *ngIf="selectedTab==0"></app-home>
       <app-lista-aud [perDate]="false" *ngIf="selectedTab==1"></app-lista-aud>
       <app-calendario *ngIf="selectedTab==2"></app-calendario>
-      <app-config *ngIf="selectedTab==3"></app-config>
+      <app-config *ngIf="selectedTab==3" (close)="openHome($event)"></app-config>
     </div>
 
     <app-login (close)="closeModal($event)" *ngIf="showLogin"></app-login>

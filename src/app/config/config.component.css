@@ -1,15 +1,23 @@
 .slider--bx {
-  width: 70%;
+  width: 90%;
   margin: auto;
   margin-bottom: 2vh;
   text-align: center;
 }
 
 .slider--tt {
-  width: 70%;
+  width: 90%;
   margin: auto;
   margin-bottom: 2vh;
 
+}
+
+.card--tt{
+  font-size: 2vh;
+}
+.toolbar{
+  width: 100%;
+  background: #fff;
 }
 
 .slider {
@@ -21,4 +29,11 @@
     display: block;
     margin:auto;
     width: 30vw;
+}
+.close--btn{
+  margin-left: 10vw;
+}
+
+.spacer {
+  flex: 1 1 auto;
 }

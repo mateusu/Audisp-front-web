@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { BackendService } from '../services/backend.service';
 import { MatSnackBar } from '@angular/material';
 
@@ -9,6 +9,7 @@ import { MatSnackBar } from '@angular/material';
 })
 export class ConfigComponent implements OnInit {
 
+  @Output() close = new EventEmitter();
   userId: number;
   likesList: any;
   logged: boolean;
@@ -58,6 +59,10 @@ export class ConfigComponent implements OnInit {
     this.snackBar.open(message, action, {
       duration: 2000,
     });
+  }
+
+  closeConfig() {
+    this.close.emit(this.close);
   }
 
 }

@@ -32,6 +32,10 @@ export class AppComponent {
     this.showLogin = event;
   }
 
+  openHome(event) {
+      this.selectedTab = 0;
+  }
+
   logout() {
     localStorage.setItem('logged', 'none');
     localStorage.setItem('user', 'none');

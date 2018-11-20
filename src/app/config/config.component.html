@@ -1,4 +1,13 @@
-<mat-card class="slider--tt">Defina seu nível de interesse nos temas:</mat-card>
+<mat-card class="slider--tt">
+    <mat-toolbar class="toolbar">
+        <mat-toolbar-row>
+          <span class="card--tt">Defina seu nível de interesse nos temas:</span>
+          <span class="spacer"></span>
+          <button (click)="closeConfig()" class="close--btn" mat-button><mat-icon>cancel</mat-icon></button>
+        </mat-toolbar-row>
+      </mat-toolbar>
+</mat-card>
+
 <mat-card class="slider--bx" *ngFor="let tema of likesList">
   <p>{{tema.nome}}</p>
   <mat-slider class="slider" thumbLabel min="0" max="100" [(ngModel)]="tema.score"></mat-slider>

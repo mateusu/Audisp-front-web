@@ -93,7 +93,7 @@
 
 .day--modal--bd {
   height: 45vh;
-  padding: 0 1vw 0 1vw;
+  padding: 0 1vw 2vh 1vw;
   overflow-y: scroll;
 }
 
@@ -125,23 +125,15 @@ p {
   margin-bottom: 3vh;
 }
 
-.txt{
-  font-size: 1.6vh !important;
-}
-
-.like--btn{
- border: 0;
- margin-left: -1vw;
- background: #fff;
-}
-
-.like--btn--clk{
-  border: 0;
-  margin-left: -1vw;
-  fill:#259CFF;
+.modal--header{
+  padding-left: 1vw;
   background: #fff;
 }
 
-.like--btn :hover{
-  fill:#259CFF;
+.spacer {
+  flex: 1 1 auto;
+}
+
+.txt{
+  font-size: 1.9vh;
 }

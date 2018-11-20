@@ -22,16 +22,29 @@
 
 <div *ngIf="showDayModal" class="day--modal--bg">
   <div class="day--modal">
-    <div class="day--modal--hd">
+    <mat-toolbar class="modal--header">
+      <mat-toolbar-row>
+        <span class="title">Audiências no dia <span style="text-transform: capitalize">{{dia}}</span></span>
+        <span class="spacer"></span>
+        <button mat-button (click)="showDayModal=false">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <!-- <div class="day--modal--hd">
       <p class="day--modal--title">Audiências no dia <span style="text-transform: capitalize">{{dia}}</span></p>
-      <svg (click)="showDayModal=false" class="close--btn" width="18" height="18" viewBox="0 0 10 10">
+      <svg  class="close--btn" width="18" height="18" viewBox="0 0 10 10">
         <path d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"></path>
       </svg>
-    </div>
+    </div>-->
 
     <div class="day--modal--bd">
-      <p *ngIf="!audData[0]" class="day--modal--info">Não há audiências para esse dia</p>
-     <app-lista-aud *ngIf="audData[0]" [perDate]="true" [audData]="audData"></app-lista-aud>
+      <mat-toolbar class="modal--header">
+        <mat-toolbar-row>
+          <span class="txt">Não há audiências registradas para esse dia</span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <app-lista-aud *ngIf="audData[0]" [perDate]="true" [audData]="audData"></app-lista-aud>
     </div>
   </div>
 </div>
