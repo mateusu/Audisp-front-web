@@ -10,44 +10,54 @@
   background: #fff;
 }
 
-.like--btn--clk{
+.like--btn--clk {
   border: 0;
-  fill:#259CFF;
+  -webkit-text-fill-color: #259CFF;
+  fill: #259CFF;
   background: #fff;
 }
 
 .like--btn:hover {
-  fill:#259CFF
+  fill: #259CFF;
+  -webkit-text-fill-color: #259CFF;
 }
 
 .spacer {
   flex: 1 1 auto;
 }
 
-.card--header{
+.card--header {
   background: #fff;
 }
 
-.card--footer{
+.card--themes{
+  height: auto;
+  margin-bottom: 2vh;
+}
+
+.card--footer {
   background: #fff;
   min-height: 1vh !important;
   height: 5vh;
 }
 
-.card--tt{
+.card--tt {
   font-size: 2.5vh;
 }
-.body{
+
+.body {
   font-size: 2vh;
 }
 
-.cap{
+.cap {
   text-transform: capitalize;
 }
-.lower::first-letter{
+
+.lower::first-letter {
   text-transform: uppercase;
-  
+
 }
-.calendar--icn{
+
+.calendar--icn {
   font-size: 2.5vh;
 }

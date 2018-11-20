@@ -30,9 +30,18 @@ export class HomeComponent implements OnInit {
         }
       );
     }
+    console.log(this.audiencias);
   }
 
   ngOnInit() {
+  }
+
+  openAudUrl(id) {
+    this.backend.getAudUrl(id).subscribe(
+      (res: any) => {
+        window.open(res.url, '_blank');
+      }
+    );
   }
 
   likeAudiencia(temas) {

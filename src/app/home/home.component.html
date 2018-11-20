@@ -14,20 +14,20 @@
         <mat-icon>book</mat-icon>
       <p class="body">Pauta: <span class="lower">{{aud.pauta}}</span></p>
     </mat-toolbar-row>
-    <mat-toolbar-row>
+    <mat-toolbar-row class="card--themes">
         <mat-chip-list>
-            <mat-chip class="cap" *ngFor="let t of aud.temas">{{t.nome}}</mat-chip>
+            <mat-chip class="cap" color="warn"  *ngFor="let t of aud.temas">{{t.nome}}</mat-chip>
           </mat-chip-list>
     </mat-toolbar-row>
   </mat-toolbar>
 
   <mat-toolbar class="card--footer">
     <mat-toolbar-row>
-      <mat-icon *ngIf="!aud.clicked" (click)="likeAudiencia(aud.temas)">thumb_up</mat-icon>
-      <mat-icon *ngIf="aud.clicked" class="like--btn--clk">thumb_up</mat-icon>
+      <button mat-button *ngIf="!aud.clicked" (click)="likeAudiencia(aud.temas); aud.clicked=true;"><mat-icon>thumb_up</mat-icon></button>
+      <button mat-button *ngIf="aud.clicked" class="like--btn--clk"><mat-icon color="blue">thumb_up</mat-icon></button>
 
       <span class="spacer"></span>
-      <mat-icon class="example-icon">link</mat-icon>
+      <button mat-button (click)="openAudUrl(aud.id)"><mat-icon class="example-icon">link</mat-icon></button>
     </mat-toolbar-row>
   </mat-toolbar>
 </mat-card>
