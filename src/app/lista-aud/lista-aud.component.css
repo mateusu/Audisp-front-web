@@ -6,7 +6,8 @@
 }
 
 .txt {
-  font-size: (12px+1.6vh) !important;
+  font-size: 1.9vh !important;
+  text-transform: capitalize;
 }
 
 .like--btn {
@@ -14,18 +15,60 @@
   background: #fff;
 }
 
-.aux--btns {
-  border: 0;
-  background: #fff;
-  float: right;
-}
-
 .like--btn--clk {
   border: 0;
+  -webkit-text-fill-color: #259CFF;
   fill: #259CFF;
   background: #fff;
 }
 
-.like--btn :hover {
+.like--btn:hover {
   fill: #259CFF;
+  -webkit-text-fill-color: #259CFF;
+}
+
+.btns {
+  border: 0;
+  background: #fff;
+  margin-right: -1vw;
+}
+
+
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.card--header {
+  margin-top: 3vh;
+  background: #fff;
+}
+
+.card--body {
+  height: 4vh;
+}
+
+.card--footer {
+  margin-top: 3vh;
+  background: #fff;
+  min-height: 1vh !important;
+  height: 5vh;
+}
+
+.body {
+  font-size: 1.8vh;
+}
+
+.cap {
+  text-transform: capitalize;
+}
+
+.lower::first-letter {
+  text-transform: uppercase;
+
+}
+
+.icon {
+  font-size: 2.4vh;
+  margin-top: 1vh;
 }

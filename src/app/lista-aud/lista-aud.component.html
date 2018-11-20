@@ -11,29 +11,41 @@
         </mat-panel-description>
 
       </mat-expansion-panel-header>
-      <svg style="margin-right: 2px" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
-        <path d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z" />
-        <path fill="none" d="M0 0h24v24H0z" /></svg> <span class="txt">{{aud.local}} - {{aud.data}} {{aud.horario}}</span>
-      <p class="txt">Pautas: </p>
-      <p class="txt">{{aud.pauta}}</p>
 
-      <mat-card-actions class="btns--bx">
-        <button *ngIf="!aud.clicked" (click)="likeAudiencia(aud.temas); aud.clicked=true" class="like--btn"><svg xmlns="http://www.w3.org/2000/svg"
-            heigth="20" width="20" viewBox="0 0 24 24">
-            <path fill="none" d="M0 0h24v24H0V0z" />
-            <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z" /></svg></button>
-        <button *ngIf="aud.clicked" class="like--btn--clk"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-            viewBox="0 0 24 24">
-            <path fill="none" d="M0 0h24v24H0V0z" />
-            <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z" /></svg></button>
+      <mat-toolbar class="card--header">
+        <mat-toolbar-row class="card--body">
+          <mat-icon class="icon">calendar_today</mat-icon>
+          <p class="body">{{aud.dia}} {{aud.horario}}</p>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="card--body">
+          <mat-icon class="icon">location_on</mat-icon>
+          <p class="body">Local: <span class="cap">{{aud.local}}</span></p>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="card--body">
+          <mat-icon class="icon">book</mat-icon>
+          <p class="body">Pautas: <span class="lower">{{aud.pauta}}</span></p>
+        </mat-toolbar-row>
+      </mat-toolbar>
 
-        <button (click)="openAudUrl(aud.id)" class="aux--btns"><svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
-            <path d="M74.6 256c0-38.3 31.1-69.4 69.4-69.4h88V144h-88c-61.8 0-112 50.2-112 112s50.2 112 112 112h88v-42.6h-88c-38.3 0-69.4-31.1-69.4-69.4zm85.4 22h192v-44H160v44zm208-134h-88v42.6h88c38.3 0 69.4 31.1 69.4 69.4s-31.1 69.4-69.4 69.4h-88V368h88c61.8 0 112-50.2 112-112s-50.2-112-112-112z" /></svg></button>
+      <mat-toolbar class="card--footer">
+        <mat-toolbar-row>
+          <button mat-button *ngIf="!aud.clicked" (click)="likeAudiencia(aud.temas); aud.clicked=true;">
+            <mat-icon>thumb_up</mat-icon>
+          </button>
+          <button class="like--btn--clk" mat-button *ngIf="aud.clicked">
+            <mat-icon color="blue">thumb_up</mat-icon>
+          </button>
 
-        <button (click)="edit=true; actualAud=aud" class="aux--btns"><svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
-            <path d="M64 368v80h80l235.727-235.729-79.999-79.998L64 368zm377.602-217.602c8.531-8.531 8.531-21.334 0-29.865l-50.135-50.135c-8.531-8.531-21.334-8.531-29.865 0l-39.468 39.469 79.999 79.998 39.469-39.467z" /></svg></button>
+          <span class="spacer"></span>
+          <button class="btns" mat-button (click)="edit=true; actualAud=aud">
+            <mat-icon class="example-icon">edit</mat-icon>
+          </button>
+          <button class="btns" mat-button (click)="openAudUrl(aud.id)">
+            <mat-icon class="example-icon">link</mat-icon>
+          </button>
 
-      </mat-card-actions>
+        </mat-toolbar-row>
+      </mat-toolbar>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

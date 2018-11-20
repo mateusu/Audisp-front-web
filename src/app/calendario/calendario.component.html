@@ -14,7 +14,7 @@
     </button>
   </div>
 </div>
-<div class="calendar--bx" [ngSwitch]="view">
+<div *ngIf="showCalendar" class="calendar--bx" [ngSwitch]="view">
   <mwl-calendar-month-view (click)="showModal()" *ngSwitchCase="'month'" [viewDate]="viewDate" [events]="events"
     (dayClicked)="clickedDate = $event.day.date">
   </mwl-calendar-month-view>

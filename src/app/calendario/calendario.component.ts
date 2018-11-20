@@ -12,6 +12,7 @@ export class CalendarioComponent implements OnInit {
 
   view = 'month';
   showDayModal: boolean;
+  showCalendar: boolean;
   audData: any[];
   viewDate: Date = new Date();
   dia: any;
@@ -21,6 +22,7 @@ export class CalendarioComponent implements OnInit {
   clickedDate: Date;
 
   constructor(private backend: BackendService) {
+    this.showCalendar = false;
     backend.getListaAudiencas().subscribe(
       (lista: any) => {
         lista.map((aud) => {
@@ -31,6 +33,7 @@ export class CalendarioComponent implements OnInit {
             start: new Date(aud.data + 'T12:00:00')
           });
         });
+        this.showCalendar = true;
       }
     );
   }

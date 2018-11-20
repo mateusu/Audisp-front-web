@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BackendService } from '../services/backend.service';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-lista-aud',
@@ -20,10 +21,21 @@ export class ListaAudComponent implements OnInit {
     if (!this.perDate) {
       this.backend.getListaAudiencas().subscribe((data: any) => {
         this.audiencias = data;
+        this.audiencias.map((aud) => {
+          aud.pauta = aud.pauta.toLowerCase();
+          aud.local = aud.local.toLowerCase();
+          aud.dia = formatDate(aud.data, 'dd/MM/yyyy', 'pt-br');
+        });
       });
     } else {
       this.audiencias = this.audData;
+      this.audiencias.map((aud) => {
+        aud.pauta = aud.pauta.toLowerCase();
+        aud.local = aud.local.toLowerCase();
+        aud.dia = formatDate(aud.data, 'dd/MM/yyyy', 'pt-br');
+      });
     }
+
   }
 
   openAudUrl(id) {

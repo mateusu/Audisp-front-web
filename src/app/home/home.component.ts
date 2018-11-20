@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../services/backend.service';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -24,6 +25,8 @@ export class HomeComponent implements OnInit {
               aud.clicked = false;
               aud.pauta = aud.pauta.toLowerCase();
               aud.local = aud.local.toLowerCase();
+              aud.dia = formatDate(aud.data, 'dd/MM/yyyy', 'pt-br');
+
               this.audiencias.push(aud);
             }
           );
