@@ -9,19 +9,27 @@ import { BackendService } from '../services/backend.service';
 export class HomeComponent implements OnInit {
 
   audiencias: any[] = [];
+  logged: boolean;
 
   constructor(private backend: BackendService) {
     const user = localStorage.getItem('user');
-    backend.getAudienciasSugeridas(user).subscribe(
-      (data: any) => {
-        data.map(
-          (aud: any) => {
-            aud.clicked = false;
-            this.audiencias.push(aud);
-          }
-        );
-      }
-    );
+    if (user === 'none') {
+      this.logged = false;
+    } else {
+      this.logged = true;
+      backend.getAudienciasSugeridas(user).subscribe(
+        (data: any) => {
+          data.map(
+            (aud: any) => {
+              aud.clicked = false;
+              aud.pauta = aud.pauta.toLowerCase();
+              aud.local = aud.local.toLowerCase();
+              this.audiencias.push(aud);
+            }
+          );
+        }
+      );
+    }
   }
 
   ngOnInit() {

@@ -14,9 +14,40 @@
   border: 0;
   fill:#259CFF;
   background: #fff;
-
 }
 
 .like--btn:hover {
   fill:#259CFF
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.card--header{
+  background: #fff;
+}
+
+.card--footer{
+  background: #fff;
+  min-height: 1vh !important;
+  height: 5vh;
+}
+
+.card--tt{
+  font-size: 2.5vh;
+}
+.body{
+  font-size: 2vh;
+}
+
+.cap{
+  text-transform: capitalize;
+}
+.lower::first-letter{
+  text-transform: uppercase;
+  
+}
+.calendar--icn{
+  font-size: 2.5vh;
 }
