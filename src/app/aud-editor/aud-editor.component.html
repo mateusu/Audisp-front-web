@@ -1,7 +1,14 @@
 <div class="modal--bg">
   <div class="modal--bd">
+    <mat-toolbar class="modal--header">
+      <mat-toolbar-row>
+        <span class="title">Ajude-nos corrigindo os dados</span>
+        <span class="spacer"></span>
+        <button mat-button (click)="closeModal()"><mat-icon>cancel</mat-icon></button>
+      </mat-toolbar-row>
+    </mat-toolbar>
     <div class="edit--forms">
-      <mat-card-title class="title">Ajude-nos corrigindo os dados da Audiência Pública</mat-card-title>
+
       <mat-form-field class="input--bx">
         <input type="text" matInput placeholder="Comissão" [(ngModel)]="aud.comissao">
       </mat-form-field>
