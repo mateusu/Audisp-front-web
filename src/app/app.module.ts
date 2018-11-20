@@ -18,6 +18,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './main/app.component';
 import { ConfigComponent } from './config/config.component';
@@ -58,6 +60,8 @@ registerLocaleData(localePt, 'pt-BR');
     MatInputModule,
     MatButtonModule,
     MatSnackBarModule,
+    MatChipsModule,
+    MatIconModule,
     HttpClientModule,
     HttpModule,
     CalendarModule.forRoot({

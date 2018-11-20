@@ -27,7 +27,7 @@
             <path fill="none" d="M0 0h24v24H0V0z" />
             <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z" /></svg></button>
 
-        <button class="aux--btns"><svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+        <button (click)="openAudUrl(aud.id)" class="aux--btns"><svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
             <path d="M74.6 256c0-38.3 31.1-69.4 69.4-69.4h88V144h-88c-61.8 0-112 50.2-112 112s50.2 112 112 112h88v-42.6h-88c-38.3 0-69.4-31.1-69.4-69.4zm85.4 22h192v-44H160v44zm208-134h-88v42.6h88c38.3 0 69.4 31.1 69.4 69.4s-31.1 69.4-69.4 69.4h-88V368h88c61.8 0 112-50.2 112-112s-50.2-112-112-112z" /></svg></button>
 
         <button (click)="edit=true; actualAud=aud" class="aux--btns"><svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">

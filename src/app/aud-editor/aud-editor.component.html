@@ -1,7 +1,7 @@
 <div class="modal--bg">
   <div class="modal--bd">
     <div class="edit--forms">
-        <mat-card-title class="title">Ajude-nos corrigindo os dados da Audiência Pública</mat-card-title>
+      <mat-card-title class="title">Ajude-nos corrigindo os dados da Audiência Pública</mat-card-title>
       <mat-form-field class="input--bx">
         <input type="text" matInput placeholder="Comissão" [(ngModel)]="aud.comissao">
       </mat-form-field>
@@ -11,9 +11,19 @@
       <mat-form-field class="input--bx">
         <input type="text" matInput placeholder="Pautas" [(ngModel)]="aud.pauta">
       </mat-form-field>
+      <!-- <mat-form-field class="input--bx"> -->
+      <!-- <input type="text" matInput placeholder="Temas" [(ngModel)]="temasText"> -->
       <mat-form-field class="input--bx">
-          <input type="text" matInput placeholder="Temas" [(ngModel)]="temasText">
-        </mat-form-field>
+        <mat-chip-list #temaTxt>
+          <mat-chip *ngFor="let tema of temasText" [selectable]="selectable" [removable]="removable" (removed)="remove(tema)">
+            <span class="tema--tt">{{tema}}</span>
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="Temas" [matChipInputFor]="temaTxt" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+      </mat-form-field>
+      <!-- </mat-form-field> -->
 
       <mat-form-field class="input--bx">
         <input type="date" matInput placeholder="Data" [(ngModel)]="aud.data">
@@ -21,8 +31,7 @@
       <mat-form-field class="input--bx">
         <input type="text" matInput placeholder="Horário" [(ngModel)]="aud.horario">
       </mat-form-field>
-      <button (click)="save()" class="bx--btns" color="primary"
-        mat-button>Salvar</button>
+      <button (click)="save()" class="bx--btns" color="primary" mat-button>Salvar</button>
       <button (click)="closeModal()" class="bx--btns" color="warn" mat-button>Cancelar</button>
     </div>
   </div>

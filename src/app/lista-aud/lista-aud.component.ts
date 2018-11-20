@@ -17,8 +17,6 @@ export class ListaAudComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.audData);
-
     if (!this.perDate) {
       this.backend.getListaAudiencas().subscribe((data: any) => {
         this.audiencias = data;
@@ -26,6 +24,14 @@ export class ListaAudComponent implements OnInit {
     } else {
       this.audiencias = this.audData;
     }
+  }
+
+  openAudUrl(id) {
+    this.backend.getAudUrl(id).subscribe(
+      (res: any) => {
+        window.open(res.url, '_blank');
+      }
+    );
   }
 
   likeAudiencia(temas) {

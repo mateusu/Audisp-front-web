@@ -21,7 +21,15 @@ export class BackendService {
     }
 
     getAudienciasSugeridas(user) {
-        return this.http.post(this.url + 'aud/sugeridas', { id: user });
+        return this.http.get(this.url + 'aud/sugeridas/' + user);
+    }
+
+    rmvTemaAudiencia(body) {
+        return this.http.post(this.url + 'tema/remAud', body);
+    }
+
+    getAudUrl(id) {
+        return this.http.get(this.url + 'aud/url/' + id);
     }
 
     getUserLikes(body) {
