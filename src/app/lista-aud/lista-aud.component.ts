@@ -10,6 +10,7 @@ import { formatDate } from '@angular/common';
 export class ListaAudComponent implements OnInit {
 
   audiencias: any[];
+  edit: any;
   @Input() perDate: boolean;
   @Input() audData: any[];
 

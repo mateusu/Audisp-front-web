@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   @Input() show;
   @Output() close = new EventEmitter();
-
+  register: any;
   constructor(private backend: BackendService, public snackBar: MatSnackBar) { }
 
   ngOnInit() {
