@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Audisp';
   selectedTab: number;
-
+  opened: any;
   showLogin: any;
   userLogged: boolean;
 
@@ -33,7 +33,7 @@ export class AppComponent {
   }
 
   openHome(event) {
-      this.selectedTab = 0;
+    this.selectedTab = 0;
   }
 
   logout() {

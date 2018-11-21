@@ -8,7 +8,7 @@
     <button class="btn--primary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate">
       Anterior
     </button>
-    <span class="month--tt">{{ viewDate | calendarDate:(view + 'ViewTitle'):locale }}</span>
+    <span class="month--tt">{{ viewDate | calendarDate:(view + 'ViewTitle') }}</span>
     <button class="btn--primary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate">
       Próximo
     </button>
