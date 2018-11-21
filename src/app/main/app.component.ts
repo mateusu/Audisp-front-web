@@ -17,7 +17,7 @@ export class AppComponent {
 
     const status = localStorage.getItem('logged');
 
-    if (status !== 'none') {
+    if (status && status !== 'none') {
       this.userLogged = true;
     } else {
       this.userLogged = false;
