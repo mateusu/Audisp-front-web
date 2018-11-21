@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class BackendService {
 
-    url = 'http://localhost:6005/';
+    url = 'https://audisp-node.herokuapp.com/';
     constructor(private http: HttpClient) {
     }
 
