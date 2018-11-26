@@ -32,8 +32,8 @@ export class AudEditorComponent implements OnInit {
   }
 
   save() {
-
     this.aud.temas = this.temasText;
+    this.aud.data = new Date(this.aud.data).toJSON();
     this.backend.editAudiencia(this.aud).subscribe(
       (res) => {
         this.backend.rmvTemaAudiencia({ audId: this.aud.id, temas: this.temasRemove }).subscribe(

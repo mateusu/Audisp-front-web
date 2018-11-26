@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         email: mail,
         senha: pass,
         nome: name,
-        nascimento: date
+        nascimento: new Date(date).toJSON()
       }).subscribe(
         (data: { status: string, text: string }) => {
           if (data.status === 'nok') {

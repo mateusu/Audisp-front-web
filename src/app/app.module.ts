@@ -33,6 +33,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 import { BackendService } from './services/backend.service';
 import { AudEditorComponent } from './aud-editor/aud-editor.component';
+import { DatePipe } from '@angular/common';
 
 registerLocaleData(localePt, 'pt-BR');
 
